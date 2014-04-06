@@ -1,0 +1,141 @@
+\documentclass{acm_proc_article-sp}
+
+
+% Load basic packages
+\usepackage{balance}  % to better equalize the last page
+\usepackage{graphics} % for EPS, load graphicx instead
+\usepackage{times}    % comment if you want LaTeX's default font
+\usepackage{url}      % llt: nicely formatted URLs
+\usepackage{color}    % colors for comments
+\usepackage{latexsym} % for checkboxes
+\usepackage{tipa}  % for chi letter
+\usepackage{subfigure} %subfigure
+\usepackage{marvosym}   % Euro symbol
+\usepackage{amsmath}  % math symbols
+% \usepackage{caption}
+\usepackage{subfigure}
+
+% llt: Define a global style for URLs, rather that the default one
+\makeatletter
+\def\url@leostyle{%
+  \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
+\makeatother
+\urlstyle{leo}
+
+
+% To make various LaTeX processors do the right thing with page size.
+\def\pprw{8.5in}
+\def\pprh{11in}
+\special{papersize=\pprw,\pprh}
+\setlength{\paperwidth}{\pprw}
+\setlength{\paperheight}{\pprh}
+\setlength{\pdfpagewidth}{\pprw}
+\setlength{\pdfpageheight}{\pprh}
+
+% Make sure hyperref comes last of your loaded packages, 
+% to give it a fighting chance of not being over-written, 
+% since its job is to redefine many LaTeX commands.
+% \usepackage[pdftex]{hyperref}
+% \hypersetup{
+% pdftitle={Interacting with Smart(er) Objects},
+% pdfauthor={Marty Pye},
+% bookmarksnumbered,
+% pdfstartview={FitH},
+% colorlinks,
+% citecolor=black,
+% filecolor=black,
+% linkcolor=black,
+% urlcolor=black,
+% breaklinks=true,
+% }
+
+% create a shortcut to typeset table headings
+\newcommand\tabhead[1]{\small\textbf{#1}}
+
+% editing commands
+\newcommand{\comment}[1]{}
+\definecolor{Orange}{rgb}{1,0.5,0}
+\newcommand{\todo}[1]{\textsf{\textbf{\textcolor{Orange}{[[#1]]}}}}
+\newcommand{\bug}[1]{\textsf{\textcolor{Orange}{#1}}}
+
+
+% check boxes
+\newcommand*{\thecheckbox}{\hss$\Box$} 
+\newenvironment*{checklist} 
+{\list{}{% 
+\renewcommand*{\makelabel}[1]{\thecheckbox}}} 
+{\endlist} 
+
+% inch symbol
+\def\inch#1{#1$''$}
+
+% subscript
+\newcommand{\superscript}[1]{\ensuremath{^{\textrm{#1}}}}
+\newcommand{\subscript}[1]{\ensuremath{_{\textrm{#1}}}}
+
+% Images
+% \myFigure	[ LABEL_PREFIX (optional) ]
+%			{ FILENAME (without extension) }
+%			{ CAPTION TEXT }
+%			{ SHORT VERSION OF CAPTION TEXT }
+\newcommand{\myFigure}[2]
+{%
+	\begin{figure}[!h]
+		\centering
+		\includegraphics[width= 0.95\columnwidth]{#1}
+		\caption{#2}
+		\label{#1}
+	\end{figure}
+}
+
+% Footnote without symbol
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+
+
+
+% statistics report
+\def\ANOVA#1#2#3#4{$F_{#1,#2} = #3, p = #4$}
+\def\ANOVAS#1#2#3#4{$F_{#1,#2} = #3, p < #4$}
+\def\tt#1#2#3{$t_{#1} = #2, p = #3$}
+\def\tts#1#2#3{$t_{#1} = #2, p < #3$}
+\def\Wilcox#1#2{$Z = #1, p #2$}
+\def\GEE#1#2#3#4{Wald \textchi$^{2}_{#1,N=#2}=#3,\ p#4$}
+\def\Mean#1{($M = #1$)}
+
+
+% variable names
+\def\PointingTime{\emph{ManipulationTime}}
+\def\DriftCount{\emph{DriftCount}}
+\def\Thickness{\emph{Thickness}}
+\def\MovementDistance{\emph{MovementDistance}}
+\def\SurfaceSupport{\emph{SurfaceSupport}}
+\def\UserID{\emph{UserID}}
+\def\SmallMovement{\emph{SmallMovement}}
+\def\LargeMovement{\emph{LargeMovement}}
+\def\HandOnSurface{\emph{HandOnSurface}}
+\def\HandInMidair{\emph{HandInMidair}}
+\def\Predepressing{\emph{Pre-depressing}}
+\def\DragDepressing{\emph{DragDepressing}}
+\def\ClickDepressing{\emph{ClickDepressing}}
+\def\PreLeaving{\emph{Pre-leaving}}
+\def\Leaving{\emph{Leaving}}
+
+% End of preamble. Here it comes the document.
+\begin{document}
+
+\title{Interacting with Smart(er) objects}
+
+\numberofauthors{1}
+\author{Marty Pye\\ RWTH Aachen University}
+
+\maketitle
+\begin{abstract}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pharetra metus odio, id consequat nunc laoreet sed. Nullam imperdiet elit eu metus feugiat, vel ultricies lectus porta. Duis eget rutrum metus. Pellentesque fringilla quam eget metus pharetra lacinia. Ut imperdiet sem et magna semper, sit amet commodo tortor aliquet. Vivamus sit amet tempus quam. Sed ornare elit eget justo mattis, nec laoreet lacus laoreet. Integer non magna erat. Integer vitae scelerisque eros.
+
+Ut vel augue condimentum, blandit diam quis, tristique orci. Phasellus malesuada fringilla lorem volutpat porttitor. Morbi quis eros non dui dignissim luctus in eget nunc. Quisque tincidunt dui pulvinar libero auctor, eget posuere turpis placerat. Nulla adipiscing elit odio, at dictum dui aliquam vitae. Aenean non libero at nisl vulputate scelerisque. Fusce id erat eu turpis cursus lacinia vel ac magna. Nulla sed lacus sit amet lorem porta fringilla. Fusce in sodales dolor, rutrum iaculis lectus. Nullam sit amet libero convallis, condimentum massa vel, faucibus justo. In hac habitasse platea dictumst. Praesent volutpat nec lectus eget suscipit. Aenean quam arcu, rutrum in mollis quis, blandit et urna. Mauris faucibus tincidunt mauris in varius. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+\end{abstract}
