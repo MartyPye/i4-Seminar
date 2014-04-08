@@ -4,7 +4,7 @@
 % Load basic packages
 \usepackage{balance}  % to better equalize the last page
 \usepackage{graphics} % for EPS, load graphicx instead
-\usepackage{times}    % comment if you want LaTeX's default font
+% \usepackage{times}    % comment if you want LaTeX's default font
 \usepackage{url}      % llt: nicely formatted URLs
 \usepackage{color}    % colors for comments
 \usepackage{latexsym} % for checkboxes
@@ -14,6 +14,7 @@
 \usepackage{amsmath}  % math symbols
 % \usepackage{caption}
 \usepackage{subfigure}
+\usepackage{url}
 
 % llt: Define a global style for URLs, rather that the default one
 \makeatletter
@@ -21,6 +22,11 @@
   \@ifundefined{selectfont}{\def\UrlFont{\sf}}{\def\UrlFont{\small\bf\ttfamily}}}
 \makeatother
 \urlstyle{leo}
+
+% get rid of the copyright box.
+\makeatletter
+\let\@copyrightspace\relax
+\makeatother
 
 
 % To make various LaTeX processors do the right thing with page size.
@@ -35,6 +41,7 @@
 % Make sure hyperref comes last of your loaded packages, 
 % to give it a fighting chance of not being over-written, 
 % since its job is to redefine many LaTeX commands.
+\usepackage{hyperref}
 % \usepackage[pdftex]{hyperref}
 % \hypersetup{
 % pdftitle={Interacting with Smart(er) Objects},
@@ -131,7 +138,7 @@
 \title{Interacting with Smart(er) objects}
 
 \numberofauthors{1}
-\author{Marty Pye\\ RWTH Aachen University}
+\author{Marty Pye\\ RWTH Aachen University\\ marty.pye@rwth-aachen.de}
 
 \maketitle
 \begin{abstract}
