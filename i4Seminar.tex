@@ -2,19 +2,21 @@
 \input{preamble}
 
 \section{Introduction}
+\label{sec:introduction}
 A large ecosystem of connected devices, termed the Internet of Things, has emerged over the last few years, connecting many real word objects like buildings, household appliances, traffic members and even human bodies with the aid of sensors and microchips.
 They record various data like audio, temperature, movement, pressure, etc., and advanced algorithms and processing methods attempt to gain a deeper understanding of the environment and the user himself.
 
 The first section of this thesis explores the IoT in more detail, and presents how the IoT can be separated into functional layers.
 
 \section{The Internet of Things}
+\label{sec:internetOfThings}
 The internet of things (IoT) has been defined by the U.S.\ National Intelligence council as \emph{``the general idea of things, especially everyday objects, that are readable, recognizably, locatable, addressable, and controllable via the Internet - whether via RFID, wireless LAN, wide-area network, or other means \cite{disruptiveTechnologies}''}.
 Everyday objects, which previously did not contain electronics are now being equipped with embedded sensors and microprocessors, and now communicate with each other and the internet. 
 This allows for objects like buildings, roads, household appliances, human body parts and many more to be connected to the internet. 
 The internet of things is undergoing a rapid growth. 
 In 2008, the number of connected things exceeded the number of humans on this planet, and Cisco estimated that by 2020 we will have 50 billion things connected to the internet \cite{evans12} \todo{replace with footnote link}. 
 Within this huge network of connected objects, a structure of functional layers is becoming apparent \cite{swan12}. 
-As shown in Figure \ref{fig:functionalLayers}, the layers can be divided into the Hardware Sensor Platforms layer, the Software Processing layer, the information visualization layer and the Action Taking layer.
+As shown in Figure \ref{fig:functionalLayers}, the layers can be divided into the hardware sensor platforms layer, the software processing layer, the information visualization layer and the action taking layer.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.9\columnwidth]{Images/functionalLayers}
@@ -22,58 +24,83 @@ As shown in Figure \ref{fig:functionalLayers}, the layers can be divided into th
 \label{fig:functionalLayers}
 \end{figure}
 
-The whole IoT is built upon the increasing availability of low-cost sensors, which provide various kinds of functionality. 
-The common ones can sense movement, pressure, light, sound, electrical potential, temperature, moisture, location and heart rate. 
-It is common for one device to incorporate several sensing elements. 
-But just gathering the data is not enough. 
-It needs to be processed and transmitted. 
-The data processing can be done locally, on the device itself, or after the data has been transmitted. 
-For the transmission, a variety of communication protocols can be used like Wi-Fi, Bluetooth, ZigBee, 3G, etc. A recent version of Bluetooth named Bluetooth low-energy allows mobile devices to send data with more battery efficiency. 
-Once this data has been processed and transmitted, it needs to be converted into some sort of human-readable form. The usual way of making the information accessible is through graphical representation. 
-There are web interfaces and mobile applications which display beautifully designed charts and statistics of the data, in an intuitively understandable manner. 
-The final step is the so-called action-taking layer, the layer which impels action-taking based on the acquired information. 
-The information is presented in a context which makes it obvious to the user, what he should do as a result of having seen it. 
+\subsection{Hardware Sensors}
+\label{sec:hardwareSensors}
+The whole IoT is built upon the increasing availability of low-cost sensors, which provide various kinds of functionality.
+The common ones can sense movement, pressure, light, sound, electrical potential, temperature, moisture, location and heart rate, and many more.
+It is common for one device to incorporate several sensing elements, which are usually driven by at least one microchip embedded in the sensing object.
+This microchip is responsible for providing the sensors with power, gathering the sensor data, and then processing it in some way.
 
-Not all information gathered by sensors is aimed at being visualized and displayed to the user in some way. 
-Very often, the sensors are used to give the object context awareness. 
+\subsection{Software Processing} 
+\label{sec:softwareProcessing}
+Just gathering the data is pretty useless, it usually needs to be processed and transmitted. 
+The data processing can be done locally, on the device itself, or after the data has been transmitted. 
+The advantage of processing the data immediately on the device is that the device does not need to uphold a connection at all times. 
+This is more demanding on the power source. 
+However, depending on how computationally challenging the processing is, the chip might not have the resources to perform the processing. 
+In that case, the data needs to be streamed to a more powerful, central unit. 
+For the transmission, a variety of communication protocols can be used like Wi-Fi, Bluetooth, ZigBee, 3G, etc. 
+A recent version of Bluetooth named Bluetooth low-energy allows mobile devices to send data with more battery efficiency. A brief overview over several communication protocols is provided in Section~\ref{sec:techniques}.
+
+\subsection{Visualisation}
+\label{sec:visualisation}
+Once this data has been processed and transmitted, it needs to be converted into some sort of human-readable form. The usual way of making the information accessible is through a graphical representation. 
+Web interfaces and mobile applications have been created which display beautifully designed charts and statistics of the data, in an intuitively understandable manner. 
+The data can be sorted on a time line, or according to events, depending on the use case.
+
+\subsection{Action Taking}
+\label{actionTaking}
+The final step is the so-called action-taking layer, the layer which impels action-taking based on the acquired information. 
+The information is presented in a context which makes it obvious to the user, what he should do as a result of having seen it.
+This functionality is often the hardest to ``get right''. The system needs to get across to the user what would be a good course of action, with out being to obtrusive or demanding. The user needs to remain in control, or many people will be reluctant to use the system. The system should ideally be highly flexible and customisable, so that users can possibly set up actions about which they do not want to be notified about, for example, but want the system to handle it autonomously without their consent. It is possibly due to these issues that this layer is potentially the least explored so far.
+
+\subsection{Contextualising}
+Not all information gathered by sensors is aimed at being visualised and displayed to the user in some way. 
+Very often, the sensors are used to give the object context awareness.
+The sensors purpose is to gain some additional knowledge about the user or his environment, in order to influence the interaction on some higher level. 
 The surrounding facts can enrich the interaction between human and device. 
 Schmidt et al.\ \cite{schmidt99} derived a model in order to structure the feature space of context, as can be seen in Figure \ref{fig:context}.
+
 \begin{figure}[!t]
-\centering
-\includegraphics[width=0.9\columnwidth]{Images/context}
-\caption{Feature space of context.}
-\label{fig:context}
+	\centering
+	\includegraphics[width=0.9\columnwidth]{Images/context}
+	\caption{Feature space of context.}
+	\label{fig:context}
 \end{figure}
 
 At the top level, context related to human factors and context related to the physical environment can be distinguished. Each one of these categories can be separated into three further subcategories (see Figure \ref{fig:context}). Human factors can be sorted into information on:
+
 \begin{itemize}
-\item The user: habits, emotional state, physiological condition, etc.
-\item The user's social environment: group, alone, social interaction, etc.
-\item The user's tasks: spontaneous activity, general goals, etc.
+	\item The user: habits, emotional state, physiological condition, etc.
+	\item The user's social environment: group, alone, social interaction, etc.
+	\item The user's tasks: spontaneous activity, general goals, etc.
 \end{itemize}
 
 Context based on the physical environment can be sorted into information on:
 \begin{itemize}
-\item Location: absolute or relative position, co-location with others, etc.
-\item Infrastructure: surrounding resources, communication network, etc.
-\item Physical conditions: noise, light, pressure, acceleration, etc.
+	\item Location: absolute or relative position, co-location with others, etc.
+	\item Infrastructure: surrounding resources, communication network, etc.
+	\item Physical conditions: noise, light, pressure, acceleration, etc.
 \end{itemize}
 
 Within each one of these subcategories, further features can be identified hierarchically. 
 On the very bottom level, the values of those features can be measured by basic sensors, which can provide a basis for abstraction to higher level features. 
 The fact that these values change over time provides additional context. 
-The IoT-trend is making more and more objects context sensitive by sensing one or many of the above features.
+The IoT trend is making more and more objects context sensitive by sensing one or many of the above features, examples of which can be found in Section~\ref{sec:caseStudies}.
 
-Once smart objects have gathered some specific information information, the user needs some means of interacting with the object. 
-The different possibilities of interaction, together with their pros and cons are discussed in the following chapter.
+Once smart objects have gathered some specific information, the user needs some means of interacting with the object.
+This interaction often needs to occur prior to the data gathering, e.g. to set up the system, or subsequently, e.g. in order to retrieve and visualize the data. This can for example occur directly on the object itself, through an application which potentially augments the physical objects, by speech, etc.
+Some different possibilities of interaction, together with their pros and cons are discussed in the following section.
 
 \section{Interaction}
+\label{sec:interaction}
 In an IoT environment, objects need to be constantly modified or reprogrammed in order to fulfill the  users needs and requirement. 
 Therefore, these objects need to allow some kind of interaction channel. 
 Ideally, this interaction should be seamlessly and ubiquitously integrated into everyday artefacts, and it should allow input as well as output. 
 Kranz et al. identified some key challenges of embedded interaction \cite{kranz10}, which shall be discussed in the following section.
 
 \subsection{Challenges}
+\label{sec:challenges}
 Embedded interaction in the IoT provides many challenges to researchers. Some of the most prominent challenges are described below.
 
 \subsubsection{Embedded devices vs.\ interaction devices}
@@ -96,6 +123,7 @@ For example, the knife might be gathering information on the chopping speed whil
 A knife where you have to count your chops/sec and manually enter the chopping speed at regular intervals would not be very user friendly.
 
 \subsection{Techniques}
+\label{sec:techniques}
 There are various different techniques on how to make objects interactive. 
 The sensing, processing and communication components can be embedded in the object.
 The connectivity of the objects is often implemented through Bluetooth \cite{bluetoothPatent} or IEEE 802.11 (Wi-Fi).
@@ -128,6 +156,7 @@ These systems allow quick and flexible augmentation of everyday objects, but are
 Other approaches can include audio sensing technologies, like StickEar \cite{yeo13}. Let's take a look at some of these exemplary systems which use augmentation of the environment.
 
 \subsubsection{WorldKit}
+\label{sec:worldKit}
 The aim of this system is to allow touch-based interactive surfaces to be created on basically any surface \cite{xiao13}. 
 This surface does not have to be modified in any way, and does not need to be calibrated for interaction in advance. 
 From a user perspective, it is so easy to create interfaces on surfaces, that they could be ``repainted'' every time they are needed. 
@@ -149,6 +178,7 @@ How to tell the armrest of the couch that it should control the volume of the TV
 Some different strategies on how to achieve this are discussed in Instant User Interfaces \cite{corsten13}.
 
 \subsubsection{Instant User Interfaces}
+\label{sec:worldKit}
 Corsten et al.\ created an optical tracking system which allows marker less tracking of everyday objects \cite{corsten13}.
 The system could detect objects, their orientation in 3D space, as well as touches on that object. 
 They propose using every day objects for instant user interfaces in order to improvise when a controller is missing but needed urgently, e.g. a pen to advance presentation slides instead of using the remote control.
@@ -165,10 +195,10 @@ For the second programming technique, the mapping was established by demonstrati
 The user performed a gesture on the object to be programmed while controlling the target interface with an existing physical controller, e.g.\ clicking a pen and pressing the right arrow key, which linked the clicking of the pen with advancing the slide.
 The third programming technique consisted of a dedicated graphical user interface (see Figure \ref{fig:iuigui}).
 \begin{figure}[!t]
-\centering
-\includegraphics[width=0.9\columnwidth]{Images/IUIGui}
-\caption{GUI for Programming a pen as a remote. The left side lists the physical affordances of the object, while the right side lists the possible actions.}
-\label{fig:iuigui}
+	\centering
+	\includegraphics[width=0.9\columnwidth]{Images/IUIGui}
+	\caption{GUI for Programming a pen as a remote. The left side lists the physical affordances of the object, while the right side lists the possible actions.}
+	\label{fig:iuigui}
 \end{figure}
 
 Corsten et al.\ chose these programming techniques because they represent the diversity of existing programming techniques.
@@ -182,14 +212,15 @@ The graphical user interface used by Corsten et al.\ was only very basic, as the
 The following section investigates a more advanced system that explores a graphical method of interacting with everyday object.
 
 \subsubsection{Smarter Objects}
+\label{sec:smarterObjects}
 Smarter Objects \cite{heun13smarter} is a system that enables rich, graphical interaction with everyday objects through a tablet or smartphone. 
 As a user holds the tablet over a physical object, the augmented reality application recognises the object and offers a graphical user interface (see Figure \ref{fig:smarterObjectsGUI}), which can be used to modify the object's behaviour and interactions with other objects.
 Once the object has been programmed, the GUI is not necessary anymore, and the object can be interacted with through its tangible interface (e.g.\ buttons, knobs).
 \begin{figure}[!t]
-\centering
-\includegraphics[width=0.9\columnwidth]{Images/smarterObjectsGUI}
-\caption{A graphical interface is displayed over a physical object in order to provide a richer control interface.}
-\label{fig:smarterObjectsGUI}
+	\centering
+	\includegraphics[width=0.9\columnwidth]{Images/smarterObjectsGUI}
+	\caption{A graphical interface is displayed over a physical object in order to provide a richer control interface.}
+	\label{fig:smarterObjectsGUI}
 \end{figure}
 
 Very often, the interaction with everyday objects can be separated into two different parts. 
@@ -226,10 +257,11 @@ The system could then either implement this rule itself, or suggest it to Bob in
 This would impose minimal cognitive load on Bob. 
 
 \section{Case Studies}
+\label{sec:caseStudies}
 For the case that everyday objects should be made interactive by embedding technology inside them, they need to be augmented with input and output facilities.
 As described above, the challenges when embedding interaction can be handled differently.
 The following sections discuss some examples of embedding interaction in everyday objects.
-Kranz et al. investigated several particular areas and their characteristic interaction methods \cite{kranz10} which are discussed in the following chapter.
+Kranz et al. investigated several particular areas and their characteristic interaction methods \cite{kranz10} which are discussed in the following Section.
 
 \subsection{Context-Aware Kitchen Utilities}
 Kranz et al.\ created some augmented kitchen utilities, including a cutting board acting as a scale and a mouse interface, a sensor augmented knife and a sensor augmented table.
@@ -259,10 +291,10 @@ As the authors did not elaborate any further on their studies, a more detailed a
 
 Karrer et al.\ created Pinstripe \cite{karrer11}, which is a textile user interface element for eyes-free, interaction on smart clothing, which uses pinching and rolling of the cloth between fingers as input (Figure 5).
 \begin{figure}[!t]
-\centering
-\includegraphics[width=0.9\columnwidth]{Images/pinstripe}
-\caption{The pinstripe control element functions by pinching and rolling a fold of cloth between your fingers. This can be used to control a linear value.}
-\label{fig:pinstripe}
+	\centering
+	\includegraphics[width=0.9\columnwidth]{Images/pinstripe}
+	\caption{The pinstripe control element functions by pinching and rolling a fold of cloth between your fingers. This can be used to control a linear value.}
+	\label{fig:pinstripe}
 \end{figure}
 The interface elements consist of parallel lines of conductive threads sewn straight into the fabric, so that they can be invisible.
 There are several challenges when designing smart textiles.
@@ -280,10 +312,10 @@ The most preferred area was the upper arm of the non-dominant arm (27,8\%), foll
 Of the people who wore long sleeves, 43\% preferred the forearm of the non dominant hand, where as 25\% preferred the upper arm.
 
 \begin{figure}[!t]
-\centering
-\includegraphics[width=0.9\columnwidth]{Images/areasBody}
-\caption{Karrer et al.\ selected 16 areas from the front of the human body where textile UI elements could be placed. Certain areas were excluded deliberately. The blobs outline the parts of each area where study participants grabbed a fold. Each blob is coloured-coded with the average grade given to that area.}
-\label{fig:areasBody}
+	\centering
+	\includegraphics[width=0.9\columnwidth]{Images/areasBody}
+	\caption{Karrer et al.\ selected 16 areas from the front of the human body where textile UI elements could be placed. Certain areas were excluded deliberately. The blobs outline the parts of each area where study participants grabbed a fold. Each blob is coloured-coded with the average grade given to that area.}
+	\label{fig:areasBody}
 \end{figure}
 
 Overall, the best suited area therefore may be the upper arms.
@@ -298,6 +330,7 @@ However it seems, that a programming technique as used in Smarter Objects \cite{
 A programming method by demonstration \cite{corsten13} as suggested by Corsten et al. also seems like a good candidate.
 
 \section{Conclusion and Guidelines}
+\label{sec:conclusion}
 Based on the experiences of Kranz et al.\ in the field of embedding interactions in everyday devices \cite{kranz10}, the following paragraph lists some important design guidelines.
 Unless referenced otherwise, all guidelines were proposed by Kranz et al.
 They believe that many problems and issues in the initial phase of projects in this field could potentially be avoided by following these guidelines.
@@ -312,6 +345,8 @@ They believe that many problems and issues in the initial phase of projects in t
 	\item \emph{Rapid Prototyping}. In order to effectively explore the design space, try and employ cheap and fast prototyping tools to create early prototypes.
 	\item \emph{Modelling support}. Provide support for formal models (e.g.\ Keystroke Level model, GOMS, etc.). This can save a lot of time and effort and help predict metrics such as task-completion times.
 \end{itemize}
+
+
 \bibliographystyle{abbrv}
 \bibliography{i4Seminar}
 
