@@ -103,17 +103,21 @@ Kranz et al. identified some key challenges of embedded interaction \cite{kranz1
 \label{sec:challenges}
 Embedded interaction in the IoT provides many challenges to researchers. Some of the most prominent challenges are described below.
 
-\subsubsection{Embedded devices vs.\ interaction devices}
-Embedding the interaction device into existing objects means integrating interaction opportunities into existing artefacts, whereas interaction devices are connected with the object of interest when interaction is needed.
-This has the advantage that the hardware necessary for the interaction can be removed when not needed.
+\subsubsection{Interaction devices vs.\ embedded interaction}
+One approach to achieving interaction with everyday objects is using dedicated interaction devices which are connected to the object of interest when the interaction is required.
+This has the advantage that the hardware necessary for the interaction can be removed when not needed (e.g. Smarter objects, see Section~\ref{sec:smarterObjects}), and can avoid accidental interaction. 
+However, the interaction device may be unavailable at the given moment where it is required for interaction.
+
+The alternative approach is embedding the interaction device into the everyday object, which means integrating interaction opportunities into existing artefacts (e.g. Pinstripe, see Section~\ref{sec:touchInputOnClothes}). 
 The advantage of embedding the interaction is that the user can communicate with the object at any point in time, without having to worry about connecting an interaction device.
-However, these embedded interaction features can be subject to another challenge, the invisibility dilemma.
+However, this can lead to accidental activation and input, and can be subject to a further challenge, known as the invisibility dilemma.
 
 \subsubsection{Invisibility dilemma}
-When augmenting an everyday object, it is important to preserve the original function, look and feel.
+When augmenting an everyday object, it is important to preserve the original function, look and feel (e.g. Pinstripe, see Section~\ref{sec:touchInputOnClothes}.
 Only then can the user continue utilising the object as before. Imagine a knife with several buttons on the handle. They would have to be arranged in order to assure that they do not get accidentally pressed when cutting with the knife.
 However, if the interface is so hidden that it does not interfere with the objects original appearance, then the users might not be able to identify digital enhancement.
 He might not recognise the object has added functionality.
+Therefore, the interface needs to be very carefully designed, in order match the requirements of the application, without interfering with the original purpose or obstructing the everyday interaction with the respective object.
 
 \subsubsection{Implicit vs. explicit interaction}
 Explicit interaction means the user interacts with the object consciously, in order to achieve a certain goal.
@@ -283,6 +287,7 @@ The sensors in the knife are hidden in the handle, the sensors on the board and 
 Therefore, they do not interfere with the designated purpose and use of those objects, however, it is not necessarily apparent whether the objects are augmented or not (Invisibility dilemma).
 
 \subsection{Capacitive Touch input on Clothes}
+\label{sec:touchInputOnClothes}
 Another domain of the IoT is smart clothing. 
 Kranz et al. created an embedded interaction toolkit which lets designers quickly add interaction elements to clothes.
 Their exemplary prototypes included phone bags, bicycle helmets, gloves and an apron with different layouts of touch controls.
