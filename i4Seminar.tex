@@ -177,6 +177,15 @@ It is not context sensitive, so accidental touching of the control interfaces co
 This demonstrates how visual sensing technologies, although practical from a technical perspective, come with some serious limitations. 
 They need to be taken carefully into account, in order to create a system, which is actually useful and usable for the user.
 
+Although the interaction is not strictly embedded in the object, rather temporarily created as an overlay, the challenges of embedding interaction still largely apply.
+The authors chose to use explicit interaction, which in this scenario was a sensible choice.
+The system implicitly guessing where a suitable place for a specific control would be is probably a little far fetched. 
+False positives would lead to annoyance and confusion on the user's side.
+They handled the invisibility dilemma by projecting the interface on the everyday objects.
+Expert users of this system might be able to make use of the interaction without any visual feedback. However, projecting a volume control on an armrest for example could lead to accidental activation in the long run, by users placing their arms on the armrest, as it was originally intended.
+The authors handled this problem by making the interfaces very easy to create and remove, through a simple stroking gesture on the surface.
+This gesture is suitable, as it does not often occur during normal use, except possibly during cleaning tasks.
+
 Also, WorldKit only discusses how to create the interface components on everyday objects, not how to actually link them with their functionality. 
 How to tell the armrest of the couch that it should control the volume of the TV? 
 Some different strategies on how to achieve this are discussed in Instant User Interfaces \cite{corsten13}.
