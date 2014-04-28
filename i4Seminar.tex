@@ -14,12 +14,13 @@ The internet of things (IoT) has been defined by the U.S.\ National Intelligence
 Everyday objects, which previously did not contain electronics are now being equipped with embedded sensors and microprocessors, and now communicate with each other and the internet. 
 This allows for objects like buildings, roads, household appliances, human body parts and many more to be connected to the internet. 
 The internet of things is undergoing a rapid growth. 
-In 2008, the number of connected things exceeded the number of humans on this planet, and Cisco estimated that by 2020 we will have 50 billion things connected to the internet \cite{evans12} \todo{replace with footnote link}. 
+In 2008, the number of connected things exceeded the number of humans on this planet, and Cisco estimated that by 2020 we will have 50 billion things connected to the internet \cite{evans12}. 
 Within this huge network of connected objects, a structure of functional layers is becoming apparent \cite{swan12}. 
-As shown in Figure \ref{fig:functionalLayers}, the layers can be divided into the hardware sensor platforms layer, the software processing layer, the information visualization layer and the action taking layer.
+As shown in Figure \ref{fig:functionalLayers}, the layers can be divided into the hardware sensor platforms layer, the software processing layer, the information visualization layer and the action taking layer. 
+The following four sections briefly describe the responsibilities of each layer.
 \begin{figure}[!t]
 \centering
-\includegraphics[width=0.9\columnwidth]{Images/functionalLayers}
+\includegraphics[width=0.9\columnwidth]{Images/functionalLayers.pdf}
 \caption{Functional layers within the Internet of Things.}
 \label{fig:functionalLayers}
 \end{figure}
@@ -27,15 +28,15 @@ As shown in Figure \ref{fig:functionalLayers}, the layers can be divided into th
 \subsection{Hardware Sensors}
 \label{sec:hardwareSensors}
 The whole IoT is built upon the increasing availability of low-cost sensors, which provide various kinds of functionality.
-The common ones can sense movement, pressure, light, sound, electrical potential, temperature, moisture, location and heart rate, and many more.
+The common ones can sense movement, pressure, light, sound, electrical potential, temperature, moisture, location, heart rate, and many more.
 It is common for one device to incorporate several sensing elements, which are usually driven by at least one microchip embedded in the sensing object.
-This microchip is responsible for providing the sensors with power, gathering the sensor data, and then processing it in some way.
+This microchip is responsible for providing the sensors with power, gathering the sensor data, and then processing and/or forwarding it in some way.
 
 \subsection{Software Processing} 
 \label{sec:softwareProcessing}
 Just gathering the data is pretty useless, it usually needs to be processed and transmitted. 
 The data processing can be done locally, on the device itself, or after the data has been transmitted. 
-The advantage of processing the data immediately on the device is that the device does not need to uphold a connection at all times. 
+The advantage of processing the data immediately on the device is that the device does not need to uphold a network connection at all times. 
 This is more demanding on the power source. 
 However, depending on how computationally challenging the processing is, the chip might not have the resources to perform the processing. 
 In that case, the data needs to be streamed to a more powerful, central unit. 
@@ -44,7 +45,7 @@ A recent version of Bluetooth named Bluetooth low-energy allows mobile devices t
 
 \subsection{Visualisation}
 \label{sec:visualisation}
-Once this data has been processed and transmitted, it needs to be converted into some sort of human-readable form. The usual way of making the information accessible is through a graphical representation. 
+Once this data has been processed and transmitted, it often needs to be converted into some sort of human-readable form. The usual way of making the information accessible is through a graphical representation. 
 Web interfaces and mobile applications have been created which display beautifully designed charts and statistics of the data, in an intuitively understandable manner. 
 The data can be sorted on a time line, or according to events, depending on the use case.
 
@@ -52,7 +53,9 @@ The data can be sorted on a time line, or according to events, depending on the 
 \label{actionTaking}
 The final step is the so-called action-taking layer, the layer which impels action-taking based on the acquired information. 
 The information is presented in a context which makes it obvious to the user, what he should do as a result of having seen it.
-This functionality is often the hardest to ``get right''. The system needs to get across to the user what would be a good course of action, with out being to obtrusive or demanding. The user needs to remain in control, or many people will be reluctant to use the system. The system should ideally be highly flexible and customisable, so that users can possibly set up actions about which they do not want to be notified about, for example, but want the system to handle it autonomously without their consent. It is possibly due to these issues that this layer is potentially the least explored so far.
+This functionality is often the hardest to `get right'. 
+The system needs to get across to the user what a good course of action would be, without being to obtrusive or demanding. 
+The user should remain in control, or many people will be reluctant to use the system. The system should ideally be highly flexible and customisable, so that users can possibly set up actions about which they want the system to handle autonomously without their consent. It is possibly due to these issues that this layer is potentially the least explored so far.
 
 \subsection{Contextualising}
 Not all information gathered by sensors is aimed at being visualised and displayed to the user in some way. 
@@ -63,7 +66,7 @@ Schmidt et al.\ \cite{schmidt99} derived a model in order to structure the featu
 
 \begin{figure}[!t]
 	\centering
-	\includegraphics[width=0.9\columnwidth]{Images/context}
+	\includegraphics[width=\columnwidth]{Images/context.pdf}
 	\caption{Feature space of context.}
 	\label{fig:context}
 \end{figure}
@@ -89,7 +92,7 @@ The fact that these values change over time provides additional context.
 The IoT trend is making more and more objects context sensitive by sensing one or many of the above features, examples of which can be found in Section~\ref{sec:caseStudies}.
 
 Once smart objects have gathered some specific information, the user needs some means of interacting with the object.
-This interaction often needs to occur prior to the data gathering, e.g. to set up the system, or subsequently, e.g. in order to retrieve and visualize the data. This can for example occur directly on the object itself, through an application which potentially augments the physical objects, by speech, etc.
+This interaction often needs to occur prior to the data gathering, e.g.\ to set up the system, or subsequently, e.g.\ in order to retrieve and visualize the data. This can either occur directly on the object itself, through an application which augments the physical objects, or by speech.
 Some different possibilities of interaction, together with their pros and cons are discussed in the following section.
 
 \section{Interaction}
@@ -97,7 +100,7 @@ Some different possibilities of interaction, together with their pros and cons a
 In an IoT environment, objects need to be constantly modified or reprogrammed in order to fulfill the  users needs and requirement. 
 Therefore, these objects need to allow some kind of interaction channel. 
 Ideally, this interaction should be seamlessly and ubiquitously integrated into everyday artefacts, and it should allow input as well as output, depending on the application. 
-Kranz et al. identified some key challenges of embedded interaction \cite{kranz10}, which shall be discussed in the following section.
+Kranz et al. identified some key challenges of embedded interaction \cite{kranz10}, which are discussed in the following section.
 
 \subsection{Challenges}
 \label{sec:challenges}
@@ -122,11 +125,11 @@ Therefore, the interface needs to be very carefully designed, in order match the
 \subsubsection{Implicit vs. explicit interaction}
 Explicit interaction means the user interacts with the object consciously, in order to achieve a certain goal.
 He is fully aware of what he is currently doing.
-Implicit interaction means that there is communication with the system happening in the background, while the user is performing some other action.
+Implicit interaction means the system is communicating in the background, while the user is performing some other action.
 For example, the knife might be gathering information on the chopping speed while the user is cutting vegetables. Depending on the application and intended usage of the device, the choice of whether to use implicit or explicit interaction should be made carefully.
 A knife where you have to count your chops/sec and manually enter the chopping speed at regular intervals would not be very user friendly.
 
-\subsection{Techniques}
+\subsection{Technology and Interaction Techniques}
 \label{sec:techniques}
 There are various different techniques on how to make objects interactive. 
 The sensing, processing and communication components can be embedded in the object.
@@ -135,7 +138,7 @@ The connectivity of the objects is often implemented through Bluetooth \cite{blu
 The main features of Bluetooth are ubiquity, low power, and low cost \cite{btbasics}.
 A wide range of devices can connect and communicate with each other when in proximity to one another.
 The devices communicate through a short-range, ad-hoc network, also known as a piconet.
-These piconets are established automatically as soon as the device enters the radio proximity, and the devices can connect whenever convenient.
+These piconets are established automatically as soon as the devices enter radio proximity, and they can connect whenever convenient.
 Therefore, Bluetooth technology is suitable for objects that are going to be in close proximity to one another. 
 
 Another communication protocol often used is IEEE 802.11 (Wi-Fi).
@@ -143,7 +146,7 @@ Wi-Fi enabled devices are able to connect to a network resource through a wirele
 If the access point is so configured, they are able to connect to the internet.
 Therefore, Wi-Fi is a suitable protocol when the smart objects need to communicate with any kind of internet services.
 
-This has the disadvantage that the objects need to have their own power source, and need to have electronics inside them.
+Embedding the technology inside the objects has the disadvantage that they need to have their own power source.
 This makes them sensitive to water and delicate if the electronics are not well enough protected.
 Kranz et al. created some smart kitchen utilities as prototypes in order to demonstrate characteristic interaction methods \cite{kranz10}. 
 One of these was a pressure sensitive cutting board, which senses the weight of the food prepared on it. 
@@ -163,12 +166,18 @@ Other approaches can include audio sensing technologies, like StickEar \cite{yeo
 \label{sec:worldKit}
 The aim of this system is to allow touch-based interactive surfaces to be created on basically any surface \cite{xiao13}. 
 This surface does not have to be modified in any way, and does not need to be calibrated for interaction in advance. 
-From a user perspective, it is so easy to create interfaces on surfaces, that they could be ``repainted'' every time they are needed. 
+From a user perspective, it is so easy to create interfaces on surfaces, that they could be repainted every time they are needed. 
 Basically the user paints the user interface by stroking backwards and forwards over the surface. 
 This movement is captured by a depth camera, and the area is highlighted by projection of a beamer. 
 UI elements like sliders or buttons can be placed in this area, and saved by the application. 
 For example, a typical living room has several sitting locations. 
-The user sitting down about to watch television could create the controls on table in front of them, or on the armrest of the couch they are sitting on.
+The user sitting down about to watch television could create the controls on a table in front of him, or on the armrest of the couch he is sitting on (see Figure \ref{fig:worldkit}).
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{Images/worldkit}
+	\caption{A user interface element spontaneously created on an everyday object (couch).}
+	\label{fig:worldkit}
+\end{figure}
 
 This system does not quite fit inside the IoT, as the objects are not really made smart in any way. 
 All this system does is create interfaces known to computers on top of everyday objects. 
@@ -186,20 +195,34 @@ Expert users of this system might be able to make use of the interaction without
 The authors handled this problem by creating a stroking gesture, which makes the creation and removal of interfaces on the surface very easy.
 This gesture is suitable, as it does not often occur during normal use, except possibly during cleaning tasks.
 
-Also, WorldKit only discusses how to create the interface components on everyday objects, not how to actually link them with their functionality. 
-How to tell the armrest of the couch that it should control the volume of the TV? 
-Some different strategies on how to achieve this are discussed in Instant User Interfaces \cite{corsten13}.
+Xiao et al.\ do not discuss how to implement the communication between the various objects that can be controlled through WorldKit interfaces.
+Obviously the Kinect is connected to a computer which processes the image, but how should the computer then control whatever the user is trying to manipulate (e.g.\ TV, lights, radio,...)?
+NinjaBlocks is a user-friendly approach to connecting these everyday objects.
+
+\subsubsection{NinjaBlocks}
+\label{sec:ninjaBlocks}
+In order for applications like WorldKit to work, controllable devices need to be connected to the network.
+Modern TVs are starting to have network connections, but a lot of simpler devices like radios, lights, blinds, windows, etc. do not have this connectivity yet.
+Solutions for easily connecting these objects and making them controllable exist, one of them being NinjaBlocks\footnote{\url{http://ninjablocks.com/}}.
+This is a platform which consists of small cloud-enabled computation units, that can sense their environment by using different sensors. 
+The central unit of this platform is the so-called spheramid.
+All the sensors stream their data back to the spheramid, which supports WiFi, Bluetooth, BLE and ZigBee.
+This allows a multitude of devices to be supported by NinjaBlocks.
+The spheramid can then control objects like lights, heaters, etc.\ through network enabled sockets.
+
+From the user's side, the system is very easy to set up, and he does not have to possess any coding skills.
+NinjaBlocks has an app, where you can create rules with a graphical user interface.
+This helps users who do not have any existing programming knowledge to link their devices together.
+The central spheramid can then control all the devices based on the rules that the user defined.
+
+Not only could WorldKit use the NinjaBlocks technology to establish the connection between user defined controls and controlled device, it could also use a similar graphical UI to connect the everyday objects and their controls.
+However, a graphical UI is not the only way to link the interaction with the functionality.
+Other strategies exist, and three are discussed and evaluated by Corsten et al.\ in Instant User Interfaces \cite{corsten13}. 
 
 \subsubsection{Instant User Interfaces}
 \label{sec:worldKit}
-Corsten et al.\ created an optical tracking system which allows marker less tracking of everyday objects \cite{corsten13}.
-The system could detect objects, their orientation in 3D space, as well as touches on that object. 
-They propose using every day objects for instant user interfaces in order to improvise when a controller is missing but needed urgently, e.g. a pen to advance presentation slides instead of using the remote control.
-Other than for improvisation, Instant UIs can be used for convenience, e.g. a stapler on a desk can be pushed to control a light, instead of having to get up and push the switch on the wall.
-Instant UIs can also enhance usability, as selected functions which are crammed onto the remote can be outsourced to objects with better ergonomics and simple affordances.
-Physical copies of existing controllers can be created when needed, e.g.\ an additional joystick for a multiplayer game when friends come over to visit.
 
-The second part of Corsten's work consisted of different possibilities of programming these everyday objects.
+The first part of Corsten's work consisted of different possibilities of programming everyday objects \cite{corsten13}.
 They evaluated the user's preferences on the programming method.
 The first programming method was a speech interface.
 They used a Wizard-of-Oz style setup, so that the user would not be limited to a specific command or vocabulary.
@@ -214,27 +237,32 @@ The third programming technique consisted of a dedicated graphical user interfac
 	\label{fig:iuigui}
 \end{figure}
 
-Corsten et al.\ chose these programming techniques because they represent the diversity of existing programming techniques.
-The speech interface is a virtual-to-virtual, the GUI a physical-to-virtual and the demonstration interface a physical-to-physical mapping technique.
-Also, the speech interface is probably the most intuitive, the demonstration interface the most practical, and the GUI the most common programming method \cite{heun2013reality}, \cite{cheng10}, \cite{mayer13}.
-
 As a group the users did not have a clear preference towards one programming technique, but they did have distinct individual preferences.
 It seems that providing several programming techniques would make sense, assuming they can all be reliably and unambiguously implemented.
 
-The graphical user interface used by Corsten et al.\ was only very basic, as they were only looking to include that genre of programming technique in their experiment. 
-The following section investigates a more advanced system that explores a graphical method of interacting with everyday object.
+The second part of Corsten's work consisted of creating an optical tracking system which allows marker less tracking of everyday objects.
+The system could detect objects, their orientation in 3D space, as well as touches on that object. 
+They propose using every day objects for instant user interfaces in order to improvise when a controller is missing but needed urgently, e.g.\ a pen to advance presentation slides instead of using the remote control.
+Other than for improvisation, Instant UIs can be used for convenience, e.g.\ a stapler on a desk can be pushed to control a light, instead of having to get up and push the switch on the wall.
+Instant UIs can also enhance usability, as selected functions which are crammed onto the remote can be outsourced to objects with better ergonomics and simple affordances.
+Physical copies of existing controllers can be created when needed, e.g.\ an additional joystick for a multiplayer game when friends come over to visit.
+
+Corsten et al.\ used an optical tracking system to sense the interaction, similar to Xiao et al.\ with WorldKit.
+Again, the authors did not elaborate on how the system could control the lights, slides, etc. in the end.
+If a system like this were deployed, a combination of this optical tracking and NinjaBlocks for example would seem to make sense.
+The everyday objects like pens, mugs etc.\ could be made interactive without the need for adding electric components inside. After the user's action is processed by the camera, the NinjaBlocks system could then control the corresponding lamp, the TV volume, the presentation slides,... This would combine the advantages of optical tracking with the connectivity capabilities of NinjaBlocks.
+
+The three programming techniques were chosen in this paper because they represent the diversity of existing programming techniques.
+The speech interface is a virtual-to-virtual, the GUI a physical-to-virtual and the demonstration interface a physical-to-physical mapping technique.
+Also, the speech interface is probably the most intuitive, the demonstration interface the most practical, and the GUI the most common programming method \cite{heun2013reality}, \cite{cheng10}, \cite{mayer13}.
+The graphical user interface used by Corsten et al.\ was only very basic, as they were only looking to include that genre of techniques in their experiment. 
+The following section investigates a more advanced system that explores a graphical method of interacting with everyday object more deeply.
 
 \subsubsection{Smarter Objects}
 \label{sec:smarterObjects}
 Smarter Objects \cite{heun13smarter} is a system that enables rich, graphical interaction with everyday objects through a tablet or smartphone. 
 As a user holds the tablet over a physical object, the augmented reality application recognises the object and offers a graphical user interface (see Figure \ref{fig:smarterObjectsGUI}), which can be used to modify the object's behaviour and interactions with other objects.
 Once the object has been programmed, the GUI is not necessary anymore, and the object can be interacted with through its tangible interface (e.g.\ buttons, knobs).
-\begin{figure}[!t]
-	\centering
-	\includegraphics[width=0.9\columnwidth]{Images/smarterObjectsGUI}
-	\caption{A graphical interface is displayed over a physical object in order to provide a richer control interface.}
-	\label{fig:smarterObjectsGUI}
-\end{figure}
 
 Very often, the interaction with everyday objects can be separated into two different parts. 
 The largest part of a user interaction is the daily operation. 
@@ -249,6 +277,13 @@ Other than providing a graphical interface for customisation and programming of 
 Smarter Objects can be easily linked by touching a tag on the GUI of one smart object and dragging it to the tag of a different smart object.
 For example, the ``eject slider'' of a toaster could be linked to an alarm clock, so that the alarm rings when the toast pops out. 
 Virtual smart objects can be placed in-between the interaction flow, so that for example, a Facebook message could make the light in the room blink several times.
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=0.9\columnwidth]{Images/smarterObjectsGUI}
+	\caption{A graphical interface is displayed over a physical object in order to provide a richer control interface.}
+	\label{fig:smarterObjectsGUI}
+\end{figure}
 
 Smarter objects handles the challenges of making objects interactive quite well. 
 An interaction device to set the objects functionality is only needed for the more complex setup purposes. 
@@ -344,6 +379,22 @@ Karrer et al.\ did not suggest any techniques for connecting the Pinstripe contr
 However it seems, that a programming technique as used in Smarter Objects \cite{heun13smarter} would make sense here, as once the user has established what to use the control for, he is unlikely to change it very frequently.
 A programming method by demonstration \cite{corsten13} as suggested by Corsten et al. also seems like a good candidate.
 
+Finally, the Pinstripe interaction has to be connected to some application, in order to serve as an input device.
+One can imagine many applications of an interaction technique like Pinstripe, and the authors tested three test applications.
+They used Pinstripe to control three applications: The volume of a music player, a graphical menu and play list controls. 
+As this was a prototype, the applications ran on a notebook which was in the user's backpack.
+However, a version of the control circuit under development already allowed direct control of an iPod music player.
+When first introduced to the Pinstripe clothing, the users expected functionality similar to a trackpad or an interactive surface. Once they had been shown by the experimenter, they were all successfully able to use Pinstripe.
+
+Pinstripe as an example, one could imagine the connectivity to be implemented with Bluetooth.
+The Pinstripe garment could register as a Human Interface Device with a Computer.
+It could then act as any other peripheral device, like a keyboard, mouse, joystick, etc. 
+No additional software would have to be installed on the computer. 
+However, the garment would always have to be within reach of the computer.
+Another alternative would be to implement 3G or WiFi functionality for Pinstripe.
+Roaming would then become easier for that garment, but there would have to be a server application running on the Computer/Tablet/Phone, which received the data from the garment. 
+That application could then e.g. send control commands to the device which is intended to be manipulated.
+
 \section{Conclusion and Guidelines}
 \label{sec:conclusion}
 Based on the experiences of Kranz et al.\ in the field of embedding interactions in everyday devices \cite{kranz10}, the following paragraph lists some important design guidelines.
@@ -360,6 +411,14 @@ They believe that many problems and issues in the initial phase of projects in t
 	\item \emph{Rapid Prototyping}. In order to effectively explore the design space, try and employ cheap and fast prototyping tools to create early prototypes.
 	\item \emph{Modelling support}. Provide support for formal models (e.g.\ Keystroke Level model, GOMS, etc.). This can save a lot of time and effort and help predict metrics such as task-completion times.
 \end{itemize}
+
+Embedding the interaction in the object is the first step, which already needs a lot of consideration.
+The second step is deciding which communication protocol to use between the objects and the central processing unit.
+This should be chosen with regard to how the objects will be used. If the objects will be roaming a lot, it makes more sense to use cellular network.
+If the objects will probably only move locally, it makes more sense to use WiFi or Bluetooth. In the future, we need intelligent frameworks which allow the connection to be set up as autonomously as possible, with as little configuration from the user side as possible.
+The same applies to connecting the functionality of the smart objects.
+The user should not have to be a programmer to create rules.
+Graphical user interfaces, speech and demonstration can be used in order to provide an intuitive and natural programming technique.
 
 
 \bibliographystyle{abbrv}
