@@ -91,6 +91,19 @@ On the very bottom level, the values of those features can be measured by basic 
 The fact that these values change over time provides additional context. 
 The IoT trend is making more and more objects context sensitive by sensing one or many of the above features, examples of which can be found in Section~\ref{sec:caseStudies}.
 
+If the object can be given certain levels of context sensitivity, the communication of the object with other objects and its environment can be improved.
+The context can help the object rule out certain input, and therefore not have to transmit that data.
+This is more energy efficient on the one hand, because the object has to send less data.
+On the other hand, it's also preferable for the user, because unnecessary messages do not get passed to him.
+Let's take a look at a concrete example.
+Imagine a setting were the lights in a room are triggered by a motion sensor.
+If there is no motion for a certain amount of time, the lights turn off.
+This has the limitation, that if the user is quietly sitting at his desk, the motion sensors might not perceive his movement, and the lights then turn off.
+This could be avoided by adding extra context awareness.
+If the light controller could also keep track of the users location, it could decide to leave the lights when the user is in the room.
+A system, which would enable such a set-up is NinjaBlocks, and is discussed in Section~\ref{sec:ninjaBlocks}.
+
+
 Once smart objects have gathered some specific information, the user needs some means of interacting with the object.
 This interaction often needs to occur prior to the data gathering, e.g.\ to set up the system, or subsequently, e.g.\ in order to retrieve and visualize the data. This can either occur directly on the object itself, through an application which augments the physical objects, or by speech.
 Some different possibilities of interaction, together with their pros and cons are discussed in the following section.
