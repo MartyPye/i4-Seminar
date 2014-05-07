@@ -20,6 +20,13 @@ As shown in Figure \ref{fig:functionalLayers}, the layers can be divided into th
 The following four sections briefly describe the responsibilities of each layer.
 \begin{figure}[!t]
 \centering
+\includegraphics[width=0.9\columnwidth]{Images/IoT.pdf}
+\caption{A variety of objects are joining the internet of things, and this thesis discusses possibilities of interacting with it.}
+\label{fig:iot}
+\end{figure}
+
+\begin{figure}[!t]
+\centering
 \includegraphics[width=0.9\columnwidth]{Images/functionalLayers.pdf}
 \caption{Functional layers within the Internet of Things.}
 \label{fig:functionalLayers}
@@ -221,7 +228,14 @@ This is a platform which consists of small cloud-enabled computation units, that
 The central unit of this platform is the so-called spheramid.
 All the sensors stream their data back to the spheramid, which supports WiFi, Bluetooth, BLE and ZigBee.
 This allows a multitude of devices to be supported by NinjaBlocks.
-The spheramid can then control objects like lights, heaters, etc.\ through network enabled sockets.
+The spheramid can then control objects like lights, heaters, etc.\ through network enabled sockets. An overview of how the NinjaBlocks system works is depicted in Figure \ref{fig:NinjaBlocksOverview}.
+
+\begin{figure}[!t]
+	\centering
+	\includegraphics[width=\columnwidth]{Images/NinjaBlocksOverview.pdf}
+	\caption{Communication overview of the NinjaBlocks system. The spheramid receives data from various sensors, processes them based on rules defined by the user, and then controls devices through network enabled sockets.}
+	\label{fig:NinjaBlocksOverview}
+\end{figure}
 
 From the user's side, the system is very easy to set up, and he does not have to possess any coding skills.
 NinjaBlocks has an app, where you can create rules with a graphical user interface.
