@@ -3,8 +3,14 @@
 
 \section{Introduction}
 \label{sec:introduction}
-A large ecosystem of connected devices, termed the Internet of Things, has emerged over the last few years, connecting many real word objects like buildings, household appliances, traffic members and even human bodies with the aid of sensors and microchips.
-They record various data like audio, temperature, movement, pressure, etc., and advanced algorithms and processing methods attempt to gain a deeper understanding of the environment and the user himself.
+
+The amount of internet enabled devices and objects is growing vastly, and the IoT concept is much broader than the familiar collection of internet enabled devices such as laptops, smartphones, tablets, etc.
+It includes all sorts of everyday objects that previously did not contain electronic components, but are now sensing and communicating with each other and the internet (see Figure \ref{fig:iot}). Some real world examples are objects like buildings, household appliances, traffic members and even human bodies.
+With the aid of sensors and microchips, they record various data like audio, temperature, movement, pressure, etc., and advanced algorithms and processing methods attempt to gain a deeper understanding of the environment and the user himself.
+
+This thesis first discusses the challenges of designing interactions with the internet of things in Section~\ref{sec:challenges}. 
+It then elaborates on how these challenges have been tackled by previous researchers in their systems in Section~\ref{sec:caseStudies}, and then concludes with a derived set of guidelines that developers in this area should take into account, so as not to succumb to the common pitfalls of designing interactive everyday objects.
+This thesis also presents different technologies in Section~\ref{sec:techniques}, and discusses on the basis of several research projects, which communication protocols would make more sense if those projects were implemented in real-world scenarios.
 
 The first section of this thesis explores the IoT in more detail, and presents how the IoT can be separated into functional layers.
 
@@ -226,7 +232,7 @@ Modern TVs are starting to have network connections, but a lot of simpler device
 Solutions for easily connecting these objects and making them controllable exist, one of them being NinjaBlocks\footnote{\url{http://ninjablocks.com/}}.
 This is a platform which consists of small cloud-enabled computation units, that can sense their environment by using different sensors. 
 The central unit of this platform is the so-called spheramid.
-All the sensors stream their data back to the spheramid, which supports WiFi, Bluetooth, BLE and ZigBee.
+All the sensors stream their data back to the spheramid, which supports Wi-Fi, Bluetooth, BLE and ZigBee.
 This allows a multitude of devices to be supported by NinjaBlocks.
 The spheramid can then control objects like lights, heaters, etc.\ through network enabled sockets. An overview of how the NinjaBlocks system works is depicted in Figure \ref{fig:NinjaBlocksOverview}.
 
@@ -338,7 +344,8 @@ For the case that everyday objects should be made interactive by embedding techn
 As described in Section~\ref{sec:challenges}, the challenges of embedding interaction can be handled differently.
 The following sections discuss some examples of embedding interaction in everyday objects.
 Kranz et al. investigated several particular areas and their characteristic interaction methods \cite{kranz10}.
-
+\\
+\\
 \subsection{Context-Aware Kitchen Utilities}
 Kranz et al.\ created some augmented kitchen utilities, including a cutting board acting as a scale and a mouse interface, a sensor augmented knife and a sensor augmented table.
 By sensing the weight of various food being chopped on the cutting board (Sensor Layer), the system can analyse whether more of an ingredient is required (Processing Layer).
@@ -418,7 +425,7 @@ The Pinstripe garment could register as a Human Interface Device with a Computer
 It could then act as any other peripheral device, like a keyboard, mouse, joystick, etc. 
 No additional software would have to be installed on the computer. 
 However, the garment would always have to be within reach of the computer.
-Another alternative would be to implement 3G or WiFi functionality for Pinstripe.
+Another alternative would be to implement 3G or Wi-Fi functionality for Pinstripe.
 Roaming would then become easier for that garment, but there would have to be a server application running on the Computer/Tablet/Phone, which received the data from the garment. 
 That application could then e.g. send control commands to the device which is intended to be manipulated.
 
@@ -442,7 +449,7 @@ They believe that many problems and issues in the initial phase of projects in t
 Embedding the interaction in the object is the first step, which already needs a lot of consideration.
 The second step is deciding which communication protocol to use between the objects and the central processing unit.
 This should be chosen with regard to how the objects will be used. If the objects will be roaming a lot, it makes more sense to use cellular network.
-If the objects will probably only move locally, it makes more sense to use WiFi or Bluetooth. In the future, we need intelligent frameworks which allow the connection to be set up as autonomously as possible, with as little configuration from the user side as possible.
+If the objects will probably only move locally, it makes more sense to use Wi-Fi or Bluetooth. In the future, we need intelligent frameworks which allow the connection to be set up as autonomously as possible, with as little configuration from the user side as possible.
 The same applies to connecting the functionality of the smart objects.
 The user should not have to be a programmer to create rules.
 Graphical user interfaces, speech and demonstration can be used in order to provide an intuitive and natural programming technique.
