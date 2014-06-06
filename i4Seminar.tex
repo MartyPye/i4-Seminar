@@ -34,7 +34,7 @@ The following four sections briefly describe the responsibilities of each layer.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.9\columnwidth]{Images/functionalLayers.pdf}
-\caption{Functional layers within the Internet of Things.}
+\caption{Functional layers within the Internet of Things \cite{swan12}. The IoT is built upon low-cost sensors, which gather certain data. This data is then processed and possibly transferred to other devices, where it can be visualised and prompt the user to perform some action.}
 \label{fig:functionalLayers}
 \end{figure}
 
@@ -47,7 +47,7 @@ This microchip is responsible for providing the sensors with power, gathering th
 
 \subsection{Software Processing} 
 \label{sec:softwareProcessing}
-Just gathering the data is pretty useless, it usually needs to be processed and transmitted. 
+Just gathering the data is usually not sufficient, it often needs to be processed and transmitted. 
 The data processing can be done locally, on the device itself, or after the data has been transmitted. 
 The advantage of processing the data immediately on the device is that the device does not need to uphold a network connection at all times. 
 This is more demanding on the power source. 
@@ -59,7 +59,7 @@ A recent version of Bluetooth named Bluetooth low-energy allows mobile devices t
 \subsection{Visualisation}
 \label{sec:visualisation}
 Once this data has been processed and transmitted, it often needs to be converted into some sort of human-readable form. The usual way of making the information accessible is through a graphical representation. 
-Web interfaces and mobile applications have been created which display beautifully designed charts and statistics of the data, in an intuitively understandable manner. 
+Web interfaces and mobile applications have been created which display charts and statistics of the data, in an intuitively understandable manner. 
 The data can be sorted on a time line, or according to events, depending on the use case.
 
 \subsection{Action Taking}
@@ -80,7 +80,7 @@ Schmidt et al.\ \cite{schmidt99} derived a model in order to structure the featu
 \begin{figure}[!t]
 	\centering
 	\includegraphics[width=\columnwidth]{Images/context.pdf}
-	\caption{Feature space of context (Adapted from \cite{schmidt99}).}
+	\caption{Feature space of context (Adapted from \cite{schmidt99}), which can be separated into context about the physical environment and human factors. Each of these can be divided up further, until low level factors can be measured by sensors.}
 	\label{fig:context}
 \end{figure}
 
@@ -155,23 +155,26 @@ Implicit interaction means the system is communicating in the background, while 
 For example, the knife might be gathering information on the chopping speed while the user is cutting vegetables. Depending on the application and intended usage of the device, the choice of whether to use implicit or explicit interaction should be made carefully.
 A knife where you have to count your chops/sec and manually enter the chopping speed at regular intervals would not be very user friendly.
 
-\subsection{Technology and Interaction Techniques}
+\subsection{Technology}
 \label{sec:techniques}
 There are various different techniques on how to make objects interactive. 
 The sensing, processing and communication components can be embedded in the object.
 The connectivity of the objects is often implemented through Bluetooth \cite{bluetoothPatent} or IEEE 802.11 (Wi-Fi).
 
+\subsubsection{Bluetooth}
 The main features of Bluetooth are ubiquity, low power, and low cost \cite{btbasics}.
 A wide range of devices can connect and communicate with each other when in proximity to one another.
 The devices communicate through a short-range, ad-hoc network, also known as a piconet.
 These piconets are established automatically as soon as the devices enter radio proximity, and they can connect whenever convenient.
 Therefore, Bluetooth technology is suitable for objects that are going to be in close proximity to one another. 
 
+\subsubsection{Wi-Fi}
 Another communication protocol often used is IEEE 802.11 (Wi-Fi).
 Wi-Fi enabled devices are able to connect to a network resource through a wireless access point, which has a limited range.
 If the access point is so configured, they are able to connect to the internet.
 Therefore, Wi-Fi is a suitable protocol when the smart objects need to communicate with any kind of internet services.
 
+\subsection{Interaction Techniques}
 Embedding the technology inside the objects has the disadvantage that they need to have their own power source.
 This makes them sensitive to water and delicate if the electronics are not well enough protected.
 Kranz et al. created some smart kitchen utilities as prototypes in order to demonstrate characteristic interaction methods \cite{kranz10}. 
@@ -253,7 +256,7 @@ However, a graphical UI is not the only way to link the interaction with the fun
 Other strategies exist, and three are discussed and evaluated by Corsten et al.\ in Instant User Interfaces \cite{corsten13}. 
 
 \subsubsection{Instant User Interfaces}
-\label{sec:worldKit}
+\label{sec:InstantUserInterfaces}
 
 The first part of Corsten's work consisted of different possibilities of programming everyday objects \cite{corsten13}.
 They evaluated the user's preferences on the programming method.
