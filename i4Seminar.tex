@@ -8,11 +8,11 @@ The amount of internet enabled devices and objects is growing vastly, and the Io
 It includes all sorts of everyday objects that previously did not contain electronic components, but are now sensing and communicating with each other and the internet (see Figure \ref{fig:iot}). Some real world examples are objects like buildings, household appliances, traffic members and even human bodies.
 With the aid of sensors and microchips, they record various data like audio, temperature, movement, pressure, etc., and advanced algorithms and processing methods attempt to gain a deeper understanding of the environment and the user himself.
 
-This thesis first discusses the challenges of designing interactions with the internet of things in Section~\ref{sec:challenges}. 
+This paper first discusses the challenges of designing interactions with the internet of things in Section~\ref{sec:challenges}. 
 It then elaborates on how these challenges have been tackled by previous researchers in their systems in Section~\ref{sec:caseStudies}, and then concludes with a derived set of guidelines that developers in this area should take into account, so as not to succumb to the common pitfalls of designing interactive everyday objects.
-This thesis also presents different technologies in Section~\ref{sec:techniques}, and discusses on the basis of several research projects, which communication protocols would make more sense if those projects were implemented in real-world scenarios.
+This paper also presents different technologies in Section~\ref{sec:techniques}, and discusses on the basis of several research projects, which communication protocols would make more sense if those projects were implemented in real-world scenarios.
 
-The first section of this thesis explores the IoT in more detail, and presents how the IoT can be separated into functional layers.
+The first section of this paper explores the IoT in more detail, and presents how the IoT can be separated into functional layers.
 
 \section{The Internet of Things}
 \label{sec:internetOfThings}
@@ -27,7 +27,7 @@ The following four sections briefly describe the responsibilities of each layer.
 \begin{figure}[!t]
 \centering
 \includegraphics[width=0.9\columnwidth]{Images/IoT.pdf}
-\caption{A variety of objects are joining the internet of things, and this thesis discusses possibilities of interacting with it.}
+\caption{A variety of objects are joining the internet of things, and this paper discusses possibilities of interacting with it.}
 \label{fig:iot}
 \end{figure}
 
@@ -130,7 +130,7 @@ Kranz et al. identified some key challenges of embedded interaction \cite{kranz1
 
 \subsection{Challenges}
 \label{sec:challenges}
-Embedded interaction in the IoT provides many challenges to researchers. Some of the most prominent challenges are described below.
+Embedded interaction in the IoT provides many challenges to researchers. Some of the most prominent challenges are described in this section.
 
 \subsubsection{Interaction devices vs.\ embedded interaction}
 One approach to achieving interaction with everyday objects is using dedicated interaction devices which are connected to the object of interest when the interaction is required.
@@ -157,10 +157,7 @@ A knife where you have to count your chops/sec and manually enter the chopping s
 
 \subsection{Technology}
 \label{sec:techniques}
-There are various different techniques on how to make objects interactive. 
-The sensing, processing and communication components can be embedded in the object.
-The connectivity of the objects is often implemented through Bluetooth \cite{bluetoothPatent} or IEEE 802.11 (Wi-Fi).
-
+This section briefly introduces the technologies which are often used to establish the connectivity between devices. These are Bluetooth \cite{bluetoothPatent} or IEEE 802.11 (Wi-Fi).
 \subsubsection{Bluetooth}
 The main features of Bluetooth are ubiquity, low power consumption, and low cost \cite{btbasics}.
 A wide range of devices can connect and communicate with each other when in proximity to one another.
@@ -175,6 +172,8 @@ If the access point is so configured, they are able to connect to the internet.
 Therefore, Wi-Fi is a suitable protocol when the smart objects need to communicate with any kind of internet services.
 
 \subsection{Interaction Techniques}
+This section describes some typical interaction techniques which can be used in the internet of things. Interactivity can be achieved by either making the objects smarter, or making the environment smarter.
+
 Embedding the technology inside the objects has the disadvantage that they need to have their own power source.
 This makes them sensitive to water and delicate if the electronics are not well enough protected.
 Kranz et al. created some smart kitchen utilities as prototypes in order to demonstrate characteristic interaction methods \cite{kranz10}. 
@@ -441,7 +440,7 @@ They believe that many problems and issues in the initial phase of projects in t
 	\item \emph{Provide information without explicit interaction.} In some cases it might be useful for the user to be given information without asking for it, by exploiting a screen saver, for example.
 	\item \emph{Overprovision}. Try and give the user multiple methods for achieving the same task, or viewing the same output. The IoT should provide many opportunities and remove limits and constraints between objects and devices.
 	\item \emph{Specialized components}. Some times, a specialized device or interaction technique for a specific task is advantageous. This can be more efficient than an all-in-one device such as a smart phone \cite{corsten13,kranz10}.
-	\item \emph{Invisibility dilemma.} The trade-off between clearly visible controls and those seamlessly integrated into an existing product design need do be considered carefully. From the examples explored in this thesis, a general rule of thumb seems to be: If the interaction is explicit, make the controls clear and visible. If the interaction is implicit, try and integrate the technology as much as possible.
+	\item \emph{Invisibility dilemma.} The trade-off between clearly visible controls and those seamlessly integrated into an existing product design need do be considered carefully. From the examples explored in this paper, a general rule of thumb seems to be: If the interaction is explicit, make the controls clear and visible. If the interaction is implicit, try and integrate the technology as much as possible.
 	\item \emph{Accidental use}. Accidental activation should be avoided. If users are afraid of initiating actions involuntarily, they might desist from using the device entirely.
 	\item \emph{Short- and long-term life cycle.} The devices need to run for a sufficient amount of time before they need recharging or replacing. Always try and maximise the life-span of the device, and make the access to the technological components (e.g.\ batteries) easy and convenient.
 	\item \emph{Rapid Prototyping}. In order to effectively explore the design space, try and employ cheap and fast prototyping tools to create early prototypes.
